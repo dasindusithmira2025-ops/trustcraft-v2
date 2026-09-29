@@ -1,0 +1,51 @@
+{
+  "name": "trustcraft",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:e2e": "tsx scripts/db-reset.ts --dir .data/e2e && playwright test",
+    "db:reset": "tsx scripts/db-reset.ts",
+    "db:migrate": "tsx scripts/db-migrate.ts",
+    "test:pg": "tsx --conditions=react-server scripts/pg-check.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:verify-upgrade": "tsx scripts/verify-upgrade.ts"
+  },
+  "dependencies": {
+    "@base-ui/react": "^1.8.0",
+    "@electric-sql/pglite": "^0.5.8",
+    "clsx": "^2.1.1",
+    "drizzle-orm": "^0.45.3",
+    "lucide-react": "^1.48.0",
+    "next": "16.3.6",
+    "pg": "^8.23.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "server-only": "^0.0.1",
+    "tailwind-merge": "^3.7.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@electric-sql/pglite-socket": "^0.2.11",
+    "@playwright/test": "^1.63.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "drizzle-kit": "^0.31.11",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.6",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.15",
+    "typescript": "^5",
+    "vitest": "^5.0.2"
+  },
+  "packageManager": "pnpm@10.26.2"
+}
